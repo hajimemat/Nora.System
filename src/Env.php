@@ -44,7 +44,7 @@ class Env implements EnvInterface, \ArrayAccess
         return $env;
     }
 
-    protected function __construct(array $server, array $get, array $post)
+    public function __construct(array $server, array $get, array $post)
     {
         $this->_SERVER = $this->normalizeAssoc($server);
         $this->_GET = $get;
@@ -78,14 +78,14 @@ class Env implements EnvInterface, \ArrayAccess
      */
     private function normalizeKey(string $key)
     {
-        if (false !== strpos($string, '_')) {
-            return strtoupper($string);
+        if (false !== strpos($key, '_')) {
+            return strtoupper($key);
         }
-        if (preg_match_all('/((?:^|[A-Z])[a-z]+)/', $string, $m)) {
+        if (preg_match_all('/((?:^|[A-Z])[a-z]+)/', $key, $m)) {
             return implode('_', array_map('strtoupper', $m[1]));
         }
 
-        return strtoupper($string);
+        return strtoupper($key);
     }
 
     // ArrayAccess Interface
@@ -220,5 +220,10 @@ class Env implements EnvInterface, \ArrayAccess
     public function request() : array
     {
         return array_merge($this->_GET, $this->_POST);
+    }
+
+    public function getServerParams()
+    {
+        return $this->_SERVER;
     }
 }

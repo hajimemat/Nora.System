@@ -18,6 +18,6 @@ class EnvModule extends Module
 
         $this
             ->bind(EnvInterface::class)
-            ->to(EnvProvider::class);
+            ->toProvider(EnvProvider::class);
     }
 }
