@@ -8,6 +8,7 @@
     ],
     "autoload": {
         "psr-4": {
+            "Nora\\FileSystem\\": "src/FileSystem",
             "Nora\\System\\": "src"
         }
     },
