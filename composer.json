@@ -1,5 +1,5 @@
 {
-    "name": "nora-php/system",
+    "name": "avap/nora-system",
     "description": "system library",
     "type": "library",
     "license": "MIT",
