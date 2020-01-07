@@ -1,5 +1,8 @@
 {
     "name": "nora-php/system",
+    "description": "system library",
+    "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Hajime MATSUMOTO",
@@ -19,15 +22,9 @@
         "phpunit/phpunit": "^8.2"
     },
     "require": {
-        "nora-php/di": "dev-master",
+        "avap/nora-di": "dev-master",
         "psr/log": "^1.1",
         "psr/cache": "^1.0",
         "psr/simple-cache": "^1.0"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@avap.codes:nora/php/Nora.DI"
-        }
-    ]
+    }
 }
